@@ -15,11 +15,11 @@
       "link": "https://t.me/+fp8tDqDRP8lhMThk",
       "title": "Test1",
       "max_approvals": 32,
-      "approved_by_bot": 32,
+      "approved_by_bot": 42,
       "initial_usage": 0,
       "enabled": false,
       "created_at": "2026-08-07T04:40:29.834405+00:00",
-      "updated_at": "2026-08-07T04:53:48.055496+00:00",
+      "updated_at": "2026-08-07T04:56:50.152369+00:00",
       "last_error": null
     }
   }
