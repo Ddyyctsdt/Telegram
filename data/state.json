@@ -9,6 +9,14 @@
       "added_at": "2026-08-07T08:12:02.974730+00:00",
       "is_creator": false,
       "can_invite_users": false
+    },
+    {
+      "id": -1003434478161,
+      "title": "Accfew Shop",
+      "username": "AccFew",
+      "is_creator": false,
+      "can_invite_users": true,
+      "added_at": "2026-08-07T08:12:11.102446+00:00"
     }
   ],
   "policies": {
