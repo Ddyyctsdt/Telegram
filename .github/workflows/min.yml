@@ -1,0 +1,97 @@
+name: Telegram Join Manager V5 QR
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */5 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: telegram-join-manager-v5
+  cancel-in-progress: true
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+
+    steps:
+      - name: Checkout selected ref
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Locate project files
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "Repository contents:"
+          find . -maxdepth 3 -type f | sort
+
+          BOT_PATH="$(find . -maxdepth 3 -type f -name bot.py -print -quit)"
+          if [ -z "$BOT_PATH" ]; then
+            echo "ERROR: bot.py was not found after checkout."
+            echo "Upload bot.py, bootstrap.py and requirements.txt to the repository root or one project subfolder."
+            exit 1
+          fi
+
+          PROJECT_DIR="$(dirname "$BOT_PATH")"
+          echo "PROJECT_DIR=$PROJECT_DIR" >> "$GITHUB_ENV"
+          echo "Detected project directory: $PROJECT_DIR"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install OCR system dependency
+        shell: bash
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tesseract-ocr tesseract-ocr-eng tesseract-ocr-fas
+
+      - name: Install dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          if [ -f "$PROJECT_DIR/requirements.txt" ]; then
+            echo "Installing from $PROJECT_DIR/requirements.txt"
+            python -m pip install -r "$PROJECT_DIR/requirements.txt"
+          else
+            echo "WARNING: requirements.txt not found; installing pinned dependencies directly."
+            python -m pip install "opentele2==1.2.1" "python-telegram-bot==22.8" "cryptography>=44,<47" "qrcode==8.2" "Pillow>=11,<13" "pytesseract==0.3.13"
+          fi
+
+      - name: Preflight source and dependency check
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$PROJECT_DIR"
+          test -f bot.py
+          test -f bootstrap.py
+          python -m py_compile bot.py bootstrap.py
+          python -c "from opentele2.api import API; from opentele2.tl import TelegramClient; import qrcode, pytesseract; from PIL import Image; print('V5 deps OK; API ID:', API.TelegramDesktop.api_id)"
+
+      - name: Configure git identity
+        run: |
+          git config user.name "join-manager-bot"
+          git config user.email "join-manager-bot@users.noreply.github.com"
+
+      - name: Run Telegram Join Manager
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          OWNER_ID: ${{ secrets.OWNER_ID }}
+          APPROVAL_CONCURRENCY: "15"
+          AUTO_SCAN_SECONDS: "20"
+          AUTO_APPROVE_BATCH: "100"
+          RUN_SECONDS: "20000"
+          PERSIST_TO_GIT: "true"
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$PROJECT_DIR"
+          python bot.py
