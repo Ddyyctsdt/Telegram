@@ -1,12 +1,14 @@
 {
-  "version": 2,
+  "version": 3,
   "active_channel_id": -1002526827938,
   "channels": [
     {
       "id": -1002526827938,
       "title": "Logingol",
       "username": null,
-      "added_at": "2026-08-07T04:39:13.975298+00:00"
+      "added_at": "2026-08-07T05:31:58.279492+00:00",
+      "is_creator": false,
+      "can_invite_users": true
     }
   ],
   "policies": {
@@ -20,7 +22,8 @@
       "enabled": false,
       "created_at": "2026-08-07T04:40:29.834405+00:00",
       "updated_at": "2026-08-07T04:57:13.200608+00:00",
-      "last_error": null
+      "last_error": null,
+      "report_enabled": false
     }
   }
 }
