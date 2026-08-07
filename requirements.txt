@@ -1,6 +1,0 @@
-opentele2==1.2.1
-python-telegram-bot==22.8
-cryptography>=44,<47
-qrcode==8.2
-Pillow>=11,<13
-pytesseract==0.3.13
