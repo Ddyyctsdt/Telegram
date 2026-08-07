@@ -14,12 +14,12 @@
       "channel_id": -1002526827938,
       "link": "https://t.me/+fp8tDqDRP8lhMThk",
       "title": "Test1",
-      "max_approvals": 50,
+      "max_approvals": 32,
       "approved_by_bot": 0,
       "initial_usage": 0,
       "enabled": true,
       "created_at": "2026-08-07T04:40:29.834405+00:00",
-      "updated_at": "2026-08-07T04:40:29.834423+00:00",
+      "updated_at": "2026-08-07T04:49:24.241371+00:00",
       "last_error": null
     }
   }
