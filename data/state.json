@@ -24,6 +24,19 @@
       "updated_at": "2026-08-07T05:34:28.755875+00:00",
       "last_error": null,
       "report_enabled": true
+    },
+    "-1002526827938:be46a9a1ef7a467e": {
+      "channel_id": -1002526827938,
+      "link": "https://t.me/+sohoLGHmdLc0MjM0",
+      "title": "وی‌آی‌پی",
+      "max_approvals": 0,
+      "approved_by_bot": 0,
+      "initial_usage": 0,
+      "enabled": false,
+      "report_enabled": true,
+      "created_at": "2026-08-07T05:42:36.120797+00:00",
+      "updated_at": "2026-08-07T05:42:36.120810+00:00",
+      "last_error": null
     }
   }
 }
