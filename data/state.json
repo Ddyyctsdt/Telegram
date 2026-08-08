@@ -25,6 +25,14 @@
       "is_creator": true,
       "can_invite_users": true,
       "added_at": "2026-08-08T09:12:18.792954+00:00"
+    },
+    {
+      "id": -1002605876199,
+      "title": "روزنه",
+      "username": null,
+      "is_creator": false,
+      "can_invite_users": true,
+      "added_at": "2026-08-08T09:12:20.241948+00:00"
     }
   ],
   "policies": {
