@@ -74,6 +74,19 @@
       "created_at": "2026-08-08T09:13:16.519593+00:00",
       "updated_at": "2026-08-08T09:13:16.519608+00:00",
       "last_error": null
+    },
+    "-1002605876199:407bab6a32095062": {
+      "channel_id": -1002605876199,
+      "link": "https://t.me/+BUXksOdF1WFlNjlk",
+      "title": "اروپا ناپایدار",
+      "max_approvals": 0,
+      "approved_by_bot": 0,
+      "initial_usage": 0,
+      "enabled": false,
+      "report_enabled": true,
+      "created_at": "2026-08-08T09:14:13.310909+00:00",
+      "updated_at": "2026-08-08T09:14:13.310924+00:00",
+      "last_error": null
     }
   }
 }
