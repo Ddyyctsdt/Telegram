@@ -124,6 +124,19 @@
       "created_at": "2026-08-08T11:13:50.522146+00:00",
       "updated_at": "2026-08-09T08:52:06.181785+00:00",
       "last_error": null
+    },
+    "-1004440646248:71ae1051d1bdd18d": {
+      "channel_id": -1004440646248,
+      "link": "https://t.me/+QoRHzCCIP_c3NWNk",
+      "title": "Link 1",
+      "max_approvals": 0,
+      "approved_by_bot": 0,
+      "initial_usage": 0,
+      "enabled": false,
+      "report_enabled": true,
+      "created_at": "2026-08-12T13:15:23.859117+00:00",
+      "updated_at": "2026-08-12T13:15:23.859123+00:00",
+      "last_error": null
     }
   }
 }
