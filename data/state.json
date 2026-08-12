@@ -41,6 +41,14 @@
       "is_creator": true,
       "can_invite_users": true,
       "added_at": "2026-08-12T13:14:49.849413+00:00"
+    },
+    {
+      "id": -1004391941101,
+      "title": "NerisSupport",
+      "username": "NerisSupport",
+      "is_creator": true,
+      "can_invite_users": true,
+      "added_at": "2026-08-12T13:14:51.433193+00:00"
     }
   ],
   "policies": {
