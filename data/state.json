@@ -33,6 +33,14 @@
       "is_creator": false,
       "can_invite_users": true,
       "added_at": "2026-08-12T13:14:34.296794+00:00"
+    },
+    {
+      "id": -1003836443267,
+      "title": "NerisShop",
+      "username": "NerisShop",
+      "is_creator": true,
+      "can_invite_users": true,
+      "added_at": "2026-08-12T13:14:49.849413+00:00"
     }
   ],
   "policies": {
